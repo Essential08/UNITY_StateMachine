@@ -1,0 +1,211 @@
+\hypertarget{class_enemy}{}\doxysection{Enemy Class Reference}
+\label{class_enemy}\index{Enemy@{Enemy}}
+Inheritance diagram for Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enemy}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654f}{State}} \{ \mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654fa6c4c10457917dea0ae06082666fe8b8c}{State.\+L\+O\+O\+K\+F\+OR}}, 
+\mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654fa4b8bb3c94a9676b5f34ace4d7102e5b9}{State.\+G\+O\+TO}}, 
+\mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654fac6ddd0f72ff2fd344693b9ca8d483871}{State.\+A\+T\+T\+A\+CK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Dit zijn de verschillende states die de enemy heeft. L\+O\+O\+K\+F\+OR zoekt de speler. G\+O\+TO zorgt ervoor dat de enemy naar de player doe gaat. En Attack state zorgt ervoor dat de enemy de speler aanvalt! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654f}{State}} \mbox{\hyperlink{class_enemy_a4df8ad893062ae25be397fa0fe39bfec}{Cur\+State}}
+\begin{DoxyCompactList}\small\item\em De state die een method kan hebben. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_afd0a97a8f0772bd9f598c8e273bdad47}{Speed}} = .\+5f
+\begin{DoxyCompactList}\small\item\em de snelheid van de enemy. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_a2ccf84d8a0aea8af817394cef3ee50ab}{Go\+To\+Distance}} = 13
+\begin{DoxyCompactList}\small\item\em De distance tussen de speler en de enemy die gehaald moet worden voordat de enemy verandert van state. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_a5205f8308eb1e0476b4d90e4867ea3dc}{Attack\+Distance}} = 4
+\begin{DoxyCompactList}\small\item\em Dit is de distance die enemy met de speler moet zijn voor dat de enemy kan attacken. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_a49372e07f87aa5d5ca848083c6a7e179}{Attack\+Timer}} = 2
+\begin{DoxyCompactList}\small\item\em De timer die ervoor zorgt wanneer de enemy kan attacken. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_enemy_a51de203cfee4b0b4c3ca57c7d0ab3633}{Target}}
+\item 
+string \mbox{\hyperlink{class_enemy_a197017e1a80640a69930ff3289d4d452}{Player\+Tag}} = \char`\"{}Player\char`\"{}
+\begin{DoxyCompactList}\small\item\em Hier geven we aan wie de speler is. De tag zit in de \mbox{\hyperlink{class_player}{Player}} in Unity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+I\+Enumerator \mbox{\hyperlink{class_enemy_aa13991024716b659900e8e3d1adb35c5}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_aaef4caa59419b81b405a38521378ee26}{Look\+For}} ()
+\begin{DoxyCompactList}\small\item\em Bij Lookfor() zorgen we ervoor dat de enemmy berekent hoever hij staat van de speler en of hij hem kan benaderen. Als hij hem kan benaderen zal de state veranderen naar G\+O\+TO Voor mijn eigen experiment heb ik er ook voor gekozen om te printen wat de enemy nu doet in de console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_adb72ed56fbad30171c4a71de58bdbcb8}{Go\+To}} ()
+\begin{DoxyCompactList}\small\item\em Als de speler in de radius komt van de enemy zal de enemy naar de speler zijn position komen. Maar als we al dichtbij genoeg zijn dat hoeven we niet meer naar de speler positie en gaan we direct naar de A\+T\+T\+A\+CK state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_af3385e468fbaaf7f5c3f6850c5a9e738}{Attack}} ()
+\begin{DoxyCompactList}\small\item\em Als we dichtbij genoeg zijn zullen we gaan beginnen met attacken. Dit gebeurt met een Timer. Als de timer onder de 0 komt zal de speler health verliezen. Dus hoelang de enemy bij de speler staat. Als de attackdistance te groot wordt zullen we weer veranderen van state en gaan we weer naar G\+O\+TO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_enemy_a94d739e783ed1f4cfcce0aaf167df51d}{Cur\+Time}}
+\begin{DoxyCompactList}\small\item\em huldige tijd. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_enemy_a9548c6d5c03aad4ecbc074b43bdfb3c7}{Player\+Script}}
+\begin{DoxyCompactList}\small\item\em Hier wordt de speler script aangegeven zodat deze later aangevraagd kan worden. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_enemy_a3c350831a87aeda91560f2a7e7fd654f}\label{class_enemy_a3c350831a87aeda91560f2a7e7fd654f}} 
+\index{Enemy@{Enemy}!State@{State}}
+\index{State@{State}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654f}{Enemy.\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Dit zijn de verschillende states die de enemy heeft. L\+O\+O\+K\+F\+OR zoekt de speler. G\+O\+TO zorgt ervoor dat de enemy naar de player doe gaat. En Attack state zorgt ervoor dat de enemy de speler aanvalt! 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOOKFOR@{LOOKFOR}!Enemy@{Enemy}}\index{Enemy@{Enemy}!LOOKFOR@{LOOKFOR}}}\mbox{\Hypertarget{class_enemy_a3c350831a87aeda91560f2a7e7fd654fa6c4c10457917dea0ae06082666fe8b8c}\label{class_enemy_a3c350831a87aeda91560f2a7e7fd654fa6c4c10457917dea0ae06082666fe8b8c}} 
+L\+O\+O\+K\+F\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOTO@{GOTO}!Enemy@{Enemy}}\index{Enemy@{Enemy}!GOTO@{GOTO}}}\mbox{\Hypertarget{class_enemy_a3c350831a87aeda91560f2a7e7fd654fa4b8bb3c94a9676b5f34ace4d7102e5b9}\label{class_enemy_a3c350831a87aeda91560f2a7e7fd654fa4b8bb3c94a9676b5f34ace4d7102e5b9}} 
+G\+O\+TO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK@{ATTACK}!Enemy@{Enemy}}\index{Enemy@{Enemy}!ATTACK@{ATTACK}}}\mbox{\Hypertarget{class_enemy_a3c350831a87aeda91560f2a7e7fd654fac6ddd0f72ff2fd344693b9ca8d483871}\label{class_enemy_a3c350831a87aeda91560f2a7e7fd654fac6ddd0f72ff2fd344693b9ca8d483871}} 
+A\+T\+T\+A\+CK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_af3385e468fbaaf7f5c3f6850c5a9e738}\label{class_enemy_af3385e468fbaaf7f5c3f6850c5a9e738}} 
+\index{Enemy@{Enemy}!Attack@{Attack}}
+\index{Attack@{Attack}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily void Enemy.\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Als we dichtbij genoeg zijn zullen we gaan beginnen met attacken. Dit gebeurt met een Timer. Als de timer onder de 0 komt zal de speler health verliezen. Dus hoelang de enemy bij de speler staat. Als de attackdistance te groot wordt zullen we weer veranderen van state en gaan we weer naar G\+O\+TO. 
+
+We zullen naar onze target kijken. De functie zit in Unity.\mbox{\Hypertarget{class_enemy_adb72ed56fbad30171c4a71de58bdbcb8}\label{class_enemy_adb72ed56fbad30171c4a71de58bdbcb8}} 
+\index{Enemy@{Enemy}!GoTo@{GoTo}}
+\index{GoTo@{GoTo}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GoTo()}{GoTo()}}
+{\footnotesize\ttfamily void Enemy.\+Go\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Als de speler in de radius komt van de enemy zal de enemy naar de speler zijn position komen. Maar als we al dichtbij genoeg zijn dat hoeven we niet meer naar de speler positie en gaan we direct naar de A\+T\+T\+A\+CK state. 
+
+We zullen naar onze target kijken. De functie zit in Unity.\mbox{\Hypertarget{class_enemy_aaef4caa59419b81b405a38521378ee26}\label{class_enemy_aaef4caa59419b81b405a38521378ee26}} 
+\index{Enemy@{Enemy}!LookFor@{LookFor}}
+\index{LookFor@{LookFor}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{LookFor()}{LookFor()}}
+{\footnotesize\ttfamily void Enemy.\+Look\+For (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bij Lookfor() zorgen we ervoor dat de enemmy berekent hoever hij staat van de speler en of hij hem kan benaderen. Als hij hem kan benaderen zal de state veranderen naar G\+O\+TO Voor mijn eigen experiment heb ik er ook voor gekozen om te printen wat de enemy nu doet in de console. 
+
+We zullen naar onze target kijken. De functie zit in Unity.\mbox{\Hypertarget{class_enemy_aa13991024716b659900e8e3d1adb35c5}\label{class_enemy_aa13991024716b659900e8e3d1adb35c5}} 
+\index{Enemy@{Enemy}!Start@{Start}}
+\index{Start@{Start}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily I\+Enumerator Enemy.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Start is called before the first frame update I\+Enumerator zorgt ervoor dat het de heletijd blijft runnen. ~\newline
+ Hier zeggen we wie de target is van de enemy. Daar was de Player\+Tag voor.
+
+Als er een target is dan zullen we de Player\+Script ophalen.
+
+Dit is de loop die zorgt dat de verschillende states laat zien. Dit is de statemachine. Elke keer dat de state verandert zorgt de case ervoor dat je naar de bijbehordende method gaat.
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{class_enemy_a5205f8308eb1e0476b4d90e4867ea3dc}\label{class_enemy_a5205f8308eb1e0476b4d90e4867ea3dc}} 
+\index{Enemy@{Enemy}!AttackDistance@{AttackDistance}}
+\index{AttackDistance@{AttackDistance}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{AttackDistance}{AttackDistance}}
+{\footnotesize\ttfamily float Enemy.\+Attack\+Distance = 4}
+
+
+
+Dit is de distance die enemy met de speler moet zijn voor dat de enemy kan attacken. 
+
+\mbox{\Hypertarget{class_enemy_a49372e07f87aa5d5ca848083c6a7e179}\label{class_enemy_a49372e07f87aa5d5ca848083c6a7e179}} 
+\index{Enemy@{Enemy}!AttackTimer@{AttackTimer}}
+\index{AttackTimer@{AttackTimer}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{AttackTimer}{AttackTimer}}
+{\footnotesize\ttfamily float Enemy.\+Attack\+Timer = 2}
+
+
+
+De timer die ervoor zorgt wanneer de enemy kan attacken. 
+
+\mbox{\Hypertarget{class_enemy_a4df8ad893062ae25be397fa0fe39bfec}\label{class_enemy_a4df8ad893062ae25be397fa0fe39bfec}} 
+\index{Enemy@{Enemy}!CurState@{CurState}}
+\index{CurState@{CurState}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{CurState}{CurState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_enemy_a3c350831a87aeda91560f2a7e7fd654f}{State}} Enemy.\+Cur\+State}
+
+
+
+De state die een method kan hebben. 
+
+\mbox{\Hypertarget{class_enemy_a94d739e783ed1f4cfcce0aaf167df51d}\label{class_enemy_a94d739e783ed1f4cfcce0aaf167df51d}} 
+\index{Enemy@{Enemy}!CurTime@{CurTime}}
+\index{CurTime@{CurTime}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{CurTime}{CurTime}}
+{\footnotesize\ttfamily float Enemy.\+Cur\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+huldige tijd. 
+
+\mbox{\Hypertarget{class_enemy_a2ccf84d8a0aea8af817394cef3ee50ab}\label{class_enemy_a2ccf84d8a0aea8af817394cef3ee50ab}} 
+\index{Enemy@{Enemy}!GoToDistance@{GoToDistance}}
+\index{GoToDistance@{GoToDistance}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GoToDistance}{GoToDistance}}
+{\footnotesize\ttfamily float Enemy.\+Go\+To\+Distance = 13}
+
+
+
+De distance tussen de speler en de enemy die gehaald moet worden voordat de enemy verandert van state. 
+
+\mbox{\Hypertarget{class_enemy_a9548c6d5c03aad4ecbc074b43bdfb3c7}\label{class_enemy_a9548c6d5c03aad4ecbc074b43bdfb3c7}} 
+\index{Enemy@{Enemy}!PlayerScript@{PlayerScript}}
+\index{PlayerScript@{PlayerScript}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{PlayerScript}{PlayerScript}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Enemy.\+Player\+Script\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Hier wordt de speler script aangegeven zodat deze later aangevraagd kan worden. 
+
+\mbox{\Hypertarget{class_enemy_a197017e1a80640a69930ff3289d4d452}\label{class_enemy_a197017e1a80640a69930ff3289d4d452}} 
+\index{Enemy@{Enemy}!PlayerTag@{PlayerTag}}
+\index{PlayerTag@{PlayerTag}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{PlayerTag}{PlayerTag}}
+{\footnotesize\ttfamily string Enemy.\+Player\+Tag = \char`\"{}Player\char`\"{}}
+
+
+
+Hier geven we aan wie de speler is. De tag zit in de \mbox{\hyperlink{class_player}{Player}} in Unity. 
+
+\mbox{\Hypertarget{class_enemy_afd0a97a8f0772bd9f598c8e273bdad47}\label{class_enemy_afd0a97a8f0772bd9f598c8e273bdad47}} 
+\index{Enemy@{Enemy}!Speed@{Speed}}
+\index{Speed@{Speed}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Speed}{Speed}}
+{\footnotesize\ttfamily float Enemy.\+Speed = .\+5f}
+
+
+
+de snelheid van de enemy. 
+
+\mbox{\Hypertarget{class_enemy_a51de203cfee4b0b4c3ca57c7d0ab3633}\label{class_enemy_a51de203cfee4b0b4c3ca57c7d0ab3633}} 
+\index{Enemy@{Enemy}!Target@{Target}}
+\index{Target@{Target}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Target}{Target}}
+{\footnotesize\ttfamily Transform Enemy.\+Target}
+

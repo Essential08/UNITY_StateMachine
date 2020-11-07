@@ -1,0 +1,176 @@
+\hypertarget{class_player}{}\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_abd2291a934964b32e9bc06a7738042d3}{speed}} = 10
+\begin{DoxyCompactList}\small\item\em Zorgt voor de snelheid van de cube. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_ade14f7db2c11604e57d2010ae2586834}{gravity}} = 10
+\begin{DoxyCompactList}\small\item\em Zorgt voor de zwaardekracht binnen het spel. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_af20b165101570684dcbe7deb860b52e3}{max\+Velocity\+Change}} = 10
+\begin{DoxyCompactList}\small\item\em De maximale draai snelheid. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a771880f572d491f8cca66a2da42ca27d}{jump\+Height}} = 2
+\begin{DoxyCompactList}\small\item\em Dit is hoe hoog de cube kan springen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ab064f330cef84e2e062fd6446db24184}{health}}
+\begin{DoxyCompactList}\small\item\em Gezondheid van speler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Hier willen we de speler variablen geven. Sinds de variablen private zijn wordt het hier gedaan. Hier heb ik kenmerken van \+\_\+rigidbody met code veranderd. Dit kan ook in Unity UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa0458562e3da0655ecb39a0031114335}{Fixed\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Hierin geven we rotaties aan. En hoe de speler beweegt en springt. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a497e9297e66b85a8580f2029371d0664}{Calculate\+Jump}} ()
+\begin{DoxyCompactList}\small\item\em Hier wordt berekend hoe hoog de cube springt. Dit doet hij door de hoogte x de zwaartekracht te doen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa17846e6de834e4c444a038ffd595c8c}{On\+Collision\+Stay}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_player_a43bbe5ed386851944c5b2506ada915b2}{grounded}}
+\begin{DoxyCompactList}\small\item\em Kijken of de cube op de grond is of niet. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a90c72d76eee2ff83b328afaf463f78ed}{dead}}
+\begin{DoxyCompactList}\small\item\em Kijken of de cube leeft of niet. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_player_a0b3ee23b3259c638d4d179570cf21b6c}{player\+Transform}}
+\item 
+Rigidbody \mbox{\hyperlink{class_player_afbad1a8a812cd22fac3ede628e52e3e4}{\+\_\+rigidbody}}
+\begin{DoxyCompactList}\small\item\em voor de Collisions heb je een rigidbody nodig \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a497e9297e66b85a8580f2029371d0664}\label{class_player_a497e9297e66b85a8580f2029371d0664}} 
+\index{Player@{Player}!CalculateJump@{CalculateJump}}
+\index{CalculateJump@{CalculateJump}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CalculateJump()}{CalculateJump()}}
+{\footnotesize\ttfamily float Player.\+Calculate\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Hier wordt berekend hoe hoog de cube springt. Dit doet hij door de hoogte x de zwaartekracht te doen. 
+
+\begin{DoxyReturn}{Returns}
+een berekening van de sprong 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_aa0458562e3da0655ecb39a0031114335}\label{class_player_aa0458562e3da0655ecb39a0031114335}} 
+\index{Player@{Player}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Player.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Hierin geven we rotaties aan. En hoe de speler beweegt en springt. 
+
+Zo beweegt de speler links en rechts.
+
+We bewegen niet op de x en de y dus de laatste wordt ingevuld door de Vertical. Dit betekent dat we vooruit en achteruit kunnen.\mbox{\Hypertarget{class_player_aa17846e6de834e4c444a038ffd595c8c}\label{class_player_aa17846e6de834e4c444a038ffd595c8c}} 
+\index{Player@{Player}!OnCollisionStay@{OnCollisionStay}}
+\index{OnCollisionStay@{OnCollisionStay}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{OnCollisionStay()}{OnCollisionStay()}}
+{\footnotesize\ttfamily void Player.\+On\+Collision\+Stay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}\label{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}} 
+\index{Player@{Player}!Start@{Start}}
+\index{Start@{Start}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Player.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Hier willen we de speler variablen geven. Sinds de variablen private zijn wordt het hier gedaan. Hier heb ik kenmerken van \+\_\+rigidbody met code veranderd. Dit kan ook in Unity UI. 
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{class_player_afbad1a8a812cd22fac3ede628e52e3e4}\label{class_player_afbad1a8a812cd22fac3ede628e52e3e4}} 
+\index{Player@{Player}!\_rigidbody@{\_rigidbody}}
+\index{\_rigidbody@{\_rigidbody}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{\_rigidbody}{\_rigidbody}}
+{\footnotesize\ttfamily Rigidbody Player.\+\_\+rigidbody\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+voor de Collisions heb je een rigidbody nodig 
+
+\mbox{\Hypertarget{class_player_a90c72d76eee2ff83b328afaf463f78ed}\label{class_player_a90c72d76eee2ff83b328afaf463f78ed}} 
+\index{Player@{Player}!dead@{dead}}
+\index{dead@{dead}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{dead}{dead}}
+{\footnotesize\ttfamily bool Player.\+dead\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Kijken of de cube leeft of niet. 
+
+\mbox{\Hypertarget{class_player_ade14f7db2c11604e57d2010ae2586834}\label{class_player_ade14f7db2c11604e57d2010ae2586834}} 
+\index{Player@{Player}!gravity@{gravity}}
+\index{gravity@{gravity}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily float Player.\+gravity = 10}
+
+
+
+Zorgt voor de zwaardekracht binnen het spel. 
+
+\mbox{\Hypertarget{class_player_a43bbe5ed386851944c5b2506ada915b2}\label{class_player_a43bbe5ed386851944c5b2506ada915b2}} 
+\index{Player@{Player}!grounded@{grounded}}
+\index{grounded@{grounded}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{grounded}{grounded}}
+{\footnotesize\ttfamily bool Player.\+grounded\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Kijken of de cube op de grond is of niet. 
+
+\mbox{\Hypertarget{class_player_ab064f330cef84e2e062fd6446db24184}\label{class_player_ab064f330cef84e2e062fd6446db24184}} 
+\index{Player@{Player}!health@{health}}
+\index{health@{health}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily int Player.\+health}
+
+
+
+Gezondheid van speler. 
+
+\mbox{\Hypertarget{class_player_a771880f572d491f8cca66a2da42ca27d}\label{class_player_a771880f572d491f8cca66a2da42ca27d}} 
+\index{Player@{Player}!jumpHeight@{jumpHeight}}
+\index{jumpHeight@{jumpHeight}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{jumpHeight}{jumpHeight}}
+{\footnotesize\ttfamily float Player.\+jump\+Height = 2}
+
+
+
+Dit is hoe hoog de cube kan springen. 
+
+\mbox{\Hypertarget{class_player_af20b165101570684dcbe7deb860b52e3}\label{class_player_af20b165101570684dcbe7deb860b52e3}} 
+\index{Player@{Player}!maxVelocityChange@{maxVelocityChange}}
+\index{maxVelocityChange@{maxVelocityChange}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{maxVelocityChange}{maxVelocityChange}}
+{\footnotesize\ttfamily float Player.\+max\+Velocity\+Change = 10}
+
+
+
+De maximale draai snelheid. 
+
+\mbox{\Hypertarget{class_player_a0b3ee23b3259c638d4d179570cf21b6c}\label{class_player_a0b3ee23b3259c638d4d179570cf21b6c}} 
+\index{Player@{Player}!playerTransform@{playerTransform}}
+\index{playerTransform@{playerTransform}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{playerTransform}{playerTransform}}
+{\footnotesize\ttfamily Transform Player.\+player\+Transform\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_abd2291a934964b32e9bc06a7738042d3}\label{class_player_abd2291a934964b32e9bc06a7738042d3}} 
+\index{Player@{Player}!speed@{speed}}
+\index{speed@{speed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Player.\+speed = 10}
+
+
+
+Zorgt voor de snelheid van de cube. 
+
